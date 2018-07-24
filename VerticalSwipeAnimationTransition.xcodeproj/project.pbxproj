@@ -15,6 +15,13 @@
 		6004459220FFB6B60050CBBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6004459020FFB6B60050CBBD /* LaunchScreen.storyboard */; };
 		60556A6021062EEC00EBD093 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60556A5F21062EEC00EBD093 /* ViewController2.swift */; };
 		60556A6421064F0100EBD093 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60556A6321064F0100EBD093 /* TripCollectionViewCell.swift */; };
+		60556A6B21076C4F00EBD093 /* RoundedTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60556A6A21076C4F00EBD093 /* RoundedTop.swift */; };
+		60556A6D21076CF300EBD093 /* RoundedTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60556A6C21076CF300EBD093 /* RoundedTopTableViewCell.xib */; };
+		60556A7021076DE800EBD093 /* TripCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60556A6E21076DE800EBD093 /* TripCardTableViewCell.swift */; };
+		60556A7121076DE800EBD093 /* TripCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60556A6F21076DE800EBD093 /* TripCardTableViewCell.xib */; };
+		60556A7321076F0E00EBD093 /* PresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60556A7221076F0E00EBD093 /* PresentingViewController.swift */; };
+		60556A75210770B500EBD093 /* PresentingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60556A74210770B500EBD093 /* PresentingStoryboard.storyboard */; };
+		60556A77210798AB00EBD093 /* TripCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60556A76210798AB00EBD093 /* TripCardCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,13 @@
 		6004459320FFB6B60050CBBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60556A5F21062EEC00EBD093 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		60556A6321064F0100EBD093 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
+		60556A6A21076C4F00EBD093 /* RoundedTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTop.swift; sourceTree = "<group>"; };
+		60556A6C21076CF300EBD093 /* RoundedTopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedTopTableViewCell.xib; sourceTree = "<group>"; };
+		60556A6E21076DE800EBD093 /* TripCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCardTableViewCell.swift; sourceTree = "<group>"; };
+		60556A6F21076DE800EBD093 /* TripCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCardTableViewCell.xib; sourceTree = "<group>"; };
+		60556A7221076F0E00EBD093 /* PresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingViewController.swift; sourceTree = "<group>"; };
+		60556A74210770B500EBD093 /* PresentingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PresentingStoryboard.storyboard; sourceTree = "<group>"; };
+		60556A76210798AB00EBD093 /* TripCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		EA11A0FA0B82B9415ED3F774 /* Pods-VerticalSwipeAnimationTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerticalSwipeAnimationTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VerticalSwipeAnimationTransition/Pods-VerticalSwipeAnimationTransition.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +92,8 @@
 		60556A65210764C000EBD093 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				60556A6321064F0100EBD093 /* TripCollectionViewCell.swift */,
+				60556A6921076C0500EBD093 /* TableView */,
+				60556A6821076BF000EBD093 /* CollectionView */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -88,6 +103,7 @@
 			children = (
 				6004458920FFB6B50050CBBD /* ViewController.swift */,
 				60556A5F21062EEC00EBD093 /* ViewController2.swift */,
+				60556A7221076F0E00EBD093 /* PresentingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -97,8 +113,29 @@
 			children = (
 				6004458B20FFB6B50050CBBD /* Main.storyboard */,
 				6004459020FFB6B60050CBBD /* LaunchScreen.storyboard */,
+				60556A74210770B500EBD093 /* PresentingStoryboard.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		60556A6821076BF000EBD093 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				60556A6321064F0100EBD093 /* TripCollectionViewCell.swift */,
+				60556A76210798AB00EBD093 /* TripCardCollectionViewCell.xib */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		60556A6921076C0500EBD093 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				60556A6A21076C4F00EBD093 /* RoundedTop.swift */,
+				60556A6C21076CF300EBD093 /* RoundedTopTableViewCell.xib */,
+				60556A6E21076DE800EBD093 /* TripCardTableViewCell.swift */,
+				60556A6F21076DE800EBD093 /* TripCardTableViewCell.xib */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		7A9BEEFDC47F086C7F8931C8 /* Pods */ = {
@@ -181,7 +218,11 @@
 			files = (
 				6004459220FFB6B60050CBBD /* LaunchScreen.storyboard in Resources */,
 				6004458F20FFB6B60050CBBD /* Assets.xcassets in Resources */,
+				60556A75210770B500EBD093 /* PresentingStoryboard.storyboard in Resources */,
 				6004458D20FFB6B50050CBBD /* Main.storyboard in Resources */,
+				60556A77210798AB00EBD093 /* TripCardCollectionViewCell.xib in Resources */,
+				60556A7121076DE800EBD093 /* TripCardTableViewCell.xib in Resources */,
+				60556A6D21076CF300EBD093 /* RoundedTopTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +290,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				60556A6021062EEC00EBD093 /* ViewController2.swift in Sources */,
+				60556A6B21076C4F00EBD093 /* RoundedTop.swift in Sources */,
+				60556A7021076DE800EBD093 /* TripCardTableViewCell.swift in Sources */,
 				6004458A20FFB6B50050CBBD /* ViewController.swift in Sources */,
 				6004458820FFB6B50050CBBD /* AppDelegate.swift in Sources */,
 				60556A6421064F0100EBD093 /* TripCollectionViewCell.swift in Sources */,
+				60556A7321076F0E00EBD093 /* PresentingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

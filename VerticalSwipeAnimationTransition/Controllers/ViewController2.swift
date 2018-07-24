@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Hero
 
 class ViewController2: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -26,7 +27,11 @@ class ViewController2: UIViewController {
         collectionView.delegate = self
         collectionView.reloadData()
         collectionViewLayout.minimumLineSpacing = 0
-
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = UIColor.black
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.hero.isEnabled = true
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -67,7 +72,7 @@ class ViewController2: UIViewController {
                 }
             } else {
                 UIView.animate(withDuration: 0.221) {
-                    cell.contentView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                    cell.contentView.transform = CGAffineTransform.identity
                 }
             }
             curIndex += 1
@@ -80,6 +85,15 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
         return dataSource.count
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = cells[indexPath.row]
+        cell.grayView.hero.id = "grayView"
+        cell.segmentView.hero.id = "segment"
+        cell.cardView.hero.id = "baseView"
+
+        let storyboard = UIStoryboard(name: "PresentingStoryboard", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "PresentingViewController")
+        self.present(controller, animated: true, completion: nil)
+
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as? TripCollectionViewCell)!

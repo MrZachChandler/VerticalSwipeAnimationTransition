@@ -68,6 +68,10 @@ class ViewController: UIViewController {
         pulsator.radius = 200
         circleView.layer.superlayer?.insertSublayer(pulsator, below: circleView.layer)
         pulsator.start()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = UIColor.black
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
