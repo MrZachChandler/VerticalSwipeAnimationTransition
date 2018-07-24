@@ -1,0 +1,15 @@
+PODS:
+  - Hero (1.2.0)
+  - Pulsator (0.5.1)
+
+DEPENDENCIES:
+  - Hero
+  - Pulsator
+
+SPEC CHECKSUMS:
+  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
+  Pulsator: f465ca37212d826523fe8c79b07c1a4c1a941f5e
+
+PODFILE CHECKSUM: da7f4b5f45394325bd0c1b500cbcf200b8927424
+
+COCOAPODS: 1.4.0

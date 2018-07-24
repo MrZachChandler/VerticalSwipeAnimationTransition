@@ -1,0 +1,6 @@
+framework module Pods_VerticalSwipeAnimationTransition {
+  umbrella header "Pods-VerticalSwipeAnimationTransition-umbrella.h"
+
+  export *
+  module * { export * }
+}
