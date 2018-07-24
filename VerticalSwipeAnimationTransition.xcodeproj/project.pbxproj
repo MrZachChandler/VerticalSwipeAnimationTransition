@@ -21,7 +21,7 @@
 		60556A7121076DE800EBD093 /* TripCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60556A6F21076DE800EBD093 /* TripCardTableViewCell.xib */; };
 		60556A7321076F0E00EBD093 /* PresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60556A7221076F0E00EBD093 /* PresentingViewController.swift */; };
 		60556A75210770B500EBD093 /* PresentingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60556A74210770B500EBD093 /* PresentingStoryboard.storyboard */; };
-		60556A77210798AB00EBD093 /* TripCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60556A76210798AB00EBD093 /* TripCardCollectionViewCell.xib */; };
+		60556A77210798AB00EBD093 /* TripCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60556A76210798AB00EBD093 /* TripCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 		60556A6F21076DE800EBD093 /* TripCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCardTableViewCell.xib; sourceTree = "<group>"; };
 		60556A7221076F0E00EBD093 /* PresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingViewController.swift; sourceTree = "<group>"; };
 		60556A74210770B500EBD093 /* PresentingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PresentingStoryboard.storyboard; sourceTree = "<group>"; };
-		60556A76210798AB00EBD093 /* TripCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		60556A76210798AB00EBD093 /* TripCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCollectionViewCell.xib; sourceTree = "<group>"; };
 		EA11A0FA0B82B9415ED3F774 /* Pods-VerticalSwipeAnimationTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerticalSwipeAnimationTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VerticalSwipeAnimationTransition/Pods-VerticalSwipeAnimationTransition.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				60556A6321064F0100EBD093 /* TripCollectionViewCell.swift */,
-				60556A76210798AB00EBD093 /* TripCardCollectionViewCell.xib */,
+				60556A76210798AB00EBD093 /* TripCollectionViewCell.xib */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 				6004458F20FFB6B60050CBBD /* Assets.xcassets in Resources */,
 				60556A75210770B500EBD093 /* PresentingStoryboard.storyboard in Resources */,
 				6004458D20FFB6B50050CBBD /* Main.storyboard in Resources */,
-				60556A77210798AB00EBD093 /* TripCardCollectionViewCell.xib in Resources */,
+				60556A77210798AB00EBD093 /* TripCollectionViewCell.xib in Resources */,
 				60556A7121076DE800EBD093 /* TripCardTableViewCell.xib in Resources */,
 				60556A6D21076CF300EBD093 /* RoundedTopTableViewCell.xib in Resources */,
 			);

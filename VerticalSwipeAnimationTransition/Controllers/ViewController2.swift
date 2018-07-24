@@ -15,6 +15,8 @@ class ViewController2: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     var dataSource = [1,2,3]
     var cells: [TripCollectionViewCell] = []
+    var selectedIndex: IndexPath?
+
     //paging
     @IBOutlet private weak var collectionViewLayout: UICollectionViewFlowLayout!
     private var indexOfCellBeforeDragging = 0
@@ -22,10 +24,12 @@ class ViewController2: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        collectionView.register(UINib(nibName: "TripCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TripCollectionViewCell")
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.reloadData()
+        animateVisibleCell(forIndex: 0)
         collectionViewLayout.minimumLineSpacing = 0
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor.black
@@ -35,7 +39,12 @@ class ViewController2: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        animateVisibleCell(forIndex: 0)
+        if let indexPath = selectedIndex {
+            collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            animateVisibleCell(forIndex: indexPath.row)
+        } else {
+            animateVisibleCell(forIndex: 0)
+        }
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -62,7 +71,6 @@ class ViewController2: UIViewController {
         let proportionalOffset = collectionViewLayout.collectionView!.contentOffset.x / itemWidth
         return Int(round(proportionalOffset))
     }
-    //^^
     private func animateVisibleCell(forIndex index: Int) {
         var curIndex = 0
         for cell in cells {
@@ -86,17 +94,21 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = cells[indexPath.row]
-        cell.grayView.hero.id = "grayView"
-        cell.segmentView.hero.id = "segment"
-        cell.cardView.hero.id = "baseView"
-
+//        cell.grayView.hero.id = "grayView"
+//        cell.segmentView.hero.id = "segment"
+//        cell.cardView.hero.id = "baseView"
+        UIView.animate(withDuration: 0.221) {
+            cell.contentView.transform = CGAffineTransform.identity
+        }
+        //        cells.removeAll()
+        selectedIndex = indexPath
         let storyboard = UIStoryboard(name: "PresentingStoryboard", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "PresentingViewController")
         self.present(controller, animated: true, completion: nil)
 
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as? TripCollectionViewCell)!
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TripCollectionViewCell", for: indexPath) as! TripCollectionViewCell
         if cells.count < dataSource.count {
             cells.append(cell)
         }

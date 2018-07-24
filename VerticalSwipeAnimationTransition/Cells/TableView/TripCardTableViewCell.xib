@@ -18,11 +18,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="229.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6HM-Lm-9m0">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6HM-Lm-9m0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yls-Pu-p39">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yls-Pu-p39">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -30,8 +29,17 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="6HM-Lm-9m0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3kC-76-Hmd"/>
+                    <constraint firstAttribute="bottom" secondItem="6HM-Lm-9m0" secondAttribute="bottom" constant="-0.5" id="Ffx-rY-Gug"/>
+                    <constraint firstAttribute="trailing" secondItem="6HM-Lm-9m0" secondAttribute="trailing" id="Fou-xd-raR"/>
+                    <constraint firstItem="6HM-Lm-9m0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vec-o1-s5v"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="6HM-Lm-9m0" id="DIk-Ei-TfD"/>
+            </connections>
             <point key="canvasLocation" x="34" y="87"/>
         </tableViewCell>
     </objects>

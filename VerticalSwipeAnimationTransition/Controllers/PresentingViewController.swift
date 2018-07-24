@@ -12,6 +12,8 @@ import UIKit
 class PresentingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    var selectedIndex: IndexPath!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,9 +46,6 @@ extension PresentingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            return tableView.dequeueReusableCell(withIdentifier: "RoundedTopTableViewCell") as! RoundedTopTableViewCell
-        }
-        if indexPath.row == 1 {
             return tableView.dequeueReusableCell(withIdentifier: "TripCardTableViewCell") as! TripCardTableViewCell
         }
         
@@ -57,10 +56,7 @@ extension PresentingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 80
-        }
-        if indexPath.row == 1 {
-            return 170
+            return 260
         }
         return 50
     }
