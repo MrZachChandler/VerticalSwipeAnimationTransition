@@ -17,6 +17,8 @@ class TripCardTableViewCell: UITableViewCell {
         setUp()
     }
     private func setUp() {
+        selectionStyle = .none
+
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "TripCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TripCollectionViewCell")

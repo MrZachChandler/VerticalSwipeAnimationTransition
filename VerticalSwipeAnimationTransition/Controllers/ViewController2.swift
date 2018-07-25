@@ -13,12 +13,11 @@ import Hero
 class ViewController2: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet private weak var collectionViewLayout: UICollectionViewFlowLayout!
+
     var dataSource = [1,2,3]
     var cells: [TripCollectionViewCell] = []
     var selectedIndex: IndexPath?
-
-    //paging
-    @IBOutlet private weak var collectionViewLayout: UICollectionViewFlowLayout!
     private var indexOfCellBeforeDragging = 0
 
     
@@ -75,9 +74,7 @@ class ViewController2: UIViewController {
         for cell in cells {
             if index == curIndex {
                 UIView.animate(withDuration: 0.221) {
-//                    cell.grayView.hero.id = "grayView"
                     cell.segmentView.hero.id = "segment"
-                    cell.cardView.hero.id = "baseView"
                     cell.viewMask.hero.id = "roundedTop"
                     cell.contentView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
                 }
@@ -119,8 +116,6 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
             if selectedIndex.row == indexPath.row {
                 cell.grayView.hero.id = "grayView"
                 cell.segmentView.hero.id = "segment"
-//                cell.cardView.hero.id = "baseView"
-//                cell.viewMask.hero.id = "roundedTop"
             }
         }
         return cell

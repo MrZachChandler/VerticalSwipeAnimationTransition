@@ -13,7 +13,8 @@ class PresentingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var selectedIndex: IndexPath!
-    
+    var exitControl = UIRefreshControl()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,15 +27,28 @@ class PresentingViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor.black
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        let exitTitle = NSMutableAttributedString(string: "Pull to exit", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 15.0)])
+        
+        exitControl.attributedTitle = exitTitle
+        exitControl.tintColor = .clear
+        exitControl.addTarget(self, action: #selector(exitPresentation), for: UIControlEvents.valueChanged)
+        
+        tableView.addSubview(exitControl)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.clear
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false 
         tableView.register(UINib(nibName: "RoundedTopTableViewCell", bundle: nil), forCellReuseIdentifier: "RoundedTopTableViewCell")
         tableView.register(UINib(nibName: "TripCardTableViewCell", bundle: nil), forCellReuseIdentifier: "TripCardTableViewCell")
         self.navigationController?.hero.isEnabled = true
 
+    }
+    @objc func exitPresentation() {
+            exitControl.endRefreshing()
+        self.dismiss(animated: true, completion: nil)
     }
     @objc func backTapped() {
         self.dismiss(animated: true, completion: nil)
@@ -72,5 +86,8 @@ extension PresentingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
     }
 }
