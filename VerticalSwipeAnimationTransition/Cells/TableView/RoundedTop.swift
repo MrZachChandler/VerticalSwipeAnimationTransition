@@ -12,13 +12,14 @@ import UIKit
 class RoundedTopTableViewCell: UITableViewCell  {
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var handleView: UIView!
-    
+    @IBOutlet weak var viewMask: UIView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setUp()
     }
     private func setUp() {
-        roundedView.hero.id = ""
+        viewMask.clipsToBounds = true
         roundedView.layer.cornerRadius = (contentView.frame.width / 2) + 120
         handleView.backgroundColor = UIColor.purple
 //        contentView.backgroundColor = UIColor.black

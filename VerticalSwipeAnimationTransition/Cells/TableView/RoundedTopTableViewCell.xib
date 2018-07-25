@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,36 +19,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64O-dF-MoR">
-                        <rect key="frame" x="-155" y="47" width="685" height="199"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYV-TS-hW4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNM-kr-PNs">
-                                <rect key="frame" x="325" y="8" width="35" height="4"/>
-                                <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64O-dF-MoR">
+                                <rect key="frame" x="-155" y="32" width="685" height="199"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNM-kr-PNs">
+                                        <rect key="frame" x="325" y="8" width="35" height="4"/>
+                                        <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="GIr-Pt-H7S"/>
-                                    <constraint firstAttribute="height" constant="4" id="PBb-W7-Dsp"/>
+                                    <constraint firstItem="MNM-kr-PNs" firstAttribute="leading" secondItem="64O-dF-MoR" secondAttribute="leading" constant="325" id="Nrv-O9-qgW"/>
+                                    <constraint firstAttribute="bottom" secondItem="MNM-kr-PNs" secondAttribute="bottom" constant="187" id="WJ3-RF-UjS"/>
+                                    <constraint firstItem="MNM-kr-PNs" firstAttribute="centerX" secondItem="64O-dF-MoR" secondAttribute="centerX" id="ZAR-ft-RCE"/>
+                                    <constraint firstAttribute="width" secondItem="64O-dF-MoR" secondAttribute="height" multiplier="685:199" id="eqa-BD-3wd"/>
+                                    <constraint firstItem="MNM-kr-PNs" firstAttribute="top" secondItem="64O-dF-MoR" secondAttribute="topMargin" id="qAO-H4-e3Y"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="roundView"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="MNM-kr-PNs" firstAttribute="centerX" secondItem="64O-dF-MoR" secondAttribute="centerX" id="m8B-De-enV"/>
-                            <constraint firstItem="MNM-kr-PNs" firstAttribute="top" secondItem="64O-dF-MoR" secondAttribute="top" constant="8" id="ua6-yT-9zD"/>
+                            <constraint firstItem="64O-dF-MoR" firstAttribute="top" secondItem="OYV-TS-hW4" secondAttribute="top" constant="32" id="4IG-U0-uKv"/>
+                            <constraint firstItem="64O-dF-MoR" firstAttribute="leading" secondItem="OYV-TS-hW4" secondAttribute="leading" constant="-155" id="4mL-yr-jUP"/>
+                            <constraint firstAttribute="trailing" secondItem="64O-dF-MoR" secondAttribute="trailing" constant="-155" id="W5e-rZ-jNZ"/>
+                            <constraint firstAttribute="bottom" secondItem="64O-dF-MoR" secondAttribute="bottom" constant="-151" id="y06-hS-5IE"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="64O-dF-MoR" firstAttribute="centerX" secondItem="Hl3-k0-oaL" secondAttribute="centerX" id="RIW-dr-a4B"/>
-                    <constraint firstItem="64O-dF-MoR" firstAttribute="leading" secondItem="Hl3-k0-oaL" secondAttribute="leading" constant="-155" id="id9-W0-bo7"/>
-                    <constraint firstItem="64O-dF-MoR" firstAttribute="top" secondItem="Hl3-k0-oaL" secondAttribute="topMargin" constant="36" id="of3-zJ-jdO"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="64O-dF-MoR" secondAttribute="bottom" constant="-177" id="yAq-aG-SoO"/>
+                    <constraint firstItem="OYV-TS-hW4" firstAttribute="leading" secondItem="Hl3-k0-oaL" secondAttribute="leading" id="5ta-J5-ws2"/>
+                    <constraint firstAttribute="bottom" secondItem="OYV-TS-hW4" secondAttribute="bottom" constant="-0.5" id="cCu-e7-x3A"/>
+                    <constraint firstAttribute="trailing" secondItem="OYV-TS-hW4" secondAttribute="trailing" id="gTL-0k-gfi"/>
+                    <constraint firstItem="OYV-TS-hW4" firstAttribute="top" secondItem="Hl3-k0-oaL" secondAttribute="top" id="y9T-E8-PvK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="handleView" destination="MNM-kr-PNs" id="pd6-Rw-bNh"/>
                 <outlet property="roundedView" destination="64O-dF-MoR" id="kd8-vj-deB"/>
+                <outlet property="viewMask" destination="OYV-TS-hW4" id="xeQ-yA-oyG"/>
             </connections>
             <point key="canvasLocation" x="49.5" y="53"/>
         </tableViewCell>

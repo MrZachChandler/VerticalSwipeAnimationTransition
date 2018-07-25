@@ -46,17 +46,24 @@ extension PresentingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            return tableView.dequeueReusableCell(withIdentifier: "TripCardTableViewCell") as! TripCardTableViewCell
+            return tableView.dequeueReusableCell(withIdentifier: "RoundedTopTableViewCell") as! RoundedTopTableViewCell
         }
-        
+        if indexPath.row == 1 {
+            let cell =  tableView.dequeueReusableCell(withIdentifier: "TripCardTableViewCell") as! TripCardTableViewCell
+            return cell
+        }
         let cell = UITableViewCell()
         cell.textLabel?.text = "IndexPath.row - \(indexPath.row)"
-        cell.contentView.hero.id = "baseView"
+//        cell.contentView.hero.id = "baseView"
+//        cell.contentView.hero.modifiers = [.f ade]
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 260
+            return 80
+        }
+        if indexPath.row == 1 {
+            return 210
         }
         return 50
     }

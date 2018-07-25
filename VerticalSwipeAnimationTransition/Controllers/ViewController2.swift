@@ -56,7 +56,6 @@ class ViewController2: UIViewController {
         let cellBodyWidth: CGFloat = 326
         let inset = ((collectionViewLayout.collectionView!.frame.width - cellBodyWidth) / 4)  + 20.0
         return inset
-        
     }
     
     private func configureCollectionViewLayoutItemSize() {
@@ -76,10 +75,18 @@ class ViewController2: UIViewController {
         for cell in cells {
             if index == curIndex {
                 UIView.animate(withDuration: 0.221) {
+//                    cell.grayView.hero.id = "grayView"
+                    cell.segmentView.hero.id = "segment"
+                    cell.cardView.hero.id = "baseView"
+                    cell.viewMask.hero.id = "roundedTop"
                     cell.contentView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
                 }
             } else {
                 UIView.animate(withDuration: 0.221) {
+                    cell.grayView.hero.id = ""
+                    cell.segmentView.hero.id = ""
+                    cell.cardView.hero.id = ""
+                    cell.viewMask.hero.id = ""
                     cell.contentView.transform = CGAffineTransform.identity
                 }
             }
@@ -94,13 +101,9 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = cells[indexPath.row]
-//        cell.grayView.hero.id = "grayView"
-//        cell.segmentView.hero.id = "segment"
-//        cell.cardView.hero.id = "baseView"
         UIView.animate(withDuration: 0.221) {
             cell.contentView.transform = CGAffineTransform.identity
         }
-        //        cells.removeAll()
         selectedIndex = indexPath
         let storyboard = UIStoryboard(name: "PresentingStoryboard", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "PresentingViewController")
@@ -111,6 +114,14 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TripCollectionViewCell", for: indexPath) as! TripCollectionViewCell
         if cells.count < dataSource.count {
             cells.append(cell)
+        }
+        if let selectedIndex = selectedIndex {
+            if selectedIndex.row == indexPath.row {
+                cell.grayView.hero.id = "grayView"
+                cell.segmentView.hero.id = "segment"
+//                cell.cardView.hero.id = "baseView"
+//                cell.viewMask.hero.id = "roundedTop"
+            }
         }
         return cell
     }
