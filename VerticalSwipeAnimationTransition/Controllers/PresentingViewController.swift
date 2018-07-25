@@ -14,12 +14,14 @@ class PresentingViewController: UIViewController {
     
     var selectedIndex: IndexPath!
     var exitControl = UIRefreshControl()
+    private var observerContext = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUp()
     }
+    
     private func setUp() {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(backTapped))
@@ -29,11 +31,9 @@ class PresentingViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         
         let exitTitle = NSMutableAttributedString(string: "Pull to exit", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 15.0)])
-        
         exitControl.attributedTitle = exitTitle
         exitControl.tintColor = .clear
         exitControl.addTarget(self, action: #selector(exitPresentation), for: UIControlEvents.valueChanged)
-        
         tableView.addSubview(exitControl)
         tableView.delegate = self
         tableView.dataSource = self
