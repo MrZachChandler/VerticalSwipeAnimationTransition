@@ -21,7 +21,7 @@ class RoundedTopTableViewCell: UITableViewCell  {
     private func setUp() {
         selectionStyle = .none
         viewMask.clipsToBounds = true
-        roundedView.layer.cornerRadius = (contentView.frame.width / 2) + 120
+        roundedView.layer.cornerRadius = (contentView.frame.width / 2) + 200
         handleView.backgroundColor = UIColor.purple
 //        contentView.backgroundColor = UIColor.black
         self.contentView.clipsToBounds = true

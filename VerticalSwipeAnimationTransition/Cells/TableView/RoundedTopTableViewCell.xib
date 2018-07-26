@@ -23,19 +23,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64O-dF-MoR">
-                                <rect key="frame" x="-155" y="32" width="685" height="199"/>
+                                <rect key="frame" x="-232" y="42" width="839" height="95"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNM-kr-PNs">
-                                        <rect key="frame" x="325" y="8" width="35" height="4"/>
+                                        <rect key="frame" x="402" y="8" width="35" height="4"/>
                                         <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="MNM-kr-PNs" firstAttribute="leading" secondItem="64O-dF-MoR" secondAttribute="leading" constant="325" id="Nrv-O9-qgW"/>
-                                    <constraint firstAttribute="bottom" secondItem="MNM-kr-PNs" secondAttribute="bottom" constant="187" id="WJ3-RF-UjS"/>
+                                    <constraint firstItem="MNM-kr-PNs" firstAttribute="leading" secondItem="64O-dF-MoR" secondAttribute="leading" constant="402" id="Nrv-O9-qgW"/>
+                                    <constraint firstAttribute="bottom" secondItem="MNM-kr-PNs" secondAttribute="bottom" constant="83" id="WJ3-RF-UjS"/>
                                     <constraint firstItem="MNM-kr-PNs" firstAttribute="centerX" secondItem="64O-dF-MoR" secondAttribute="centerX" id="ZAR-ft-RCE"/>
-                                    <constraint firstAttribute="width" secondItem="64O-dF-MoR" secondAttribute="height" multiplier="685:199" id="eqa-BD-3wd"/>
+                                    <constraint firstAttribute="width" secondItem="64O-dF-MoR" secondAttribute="height" multiplier="685:199" constant="511.9899497487437" id="eqa-BD-3wd"/>
                                     <constraint firstItem="MNM-kr-PNs" firstAttribute="top" secondItem="64O-dF-MoR" secondAttribute="topMargin" id="qAO-H4-e3Y"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -45,10 +45,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="64O-dF-MoR" firstAttribute="top" secondItem="OYV-TS-hW4" secondAttribute="top" constant="32" id="4IG-U0-uKv"/>
-                            <constraint firstItem="64O-dF-MoR" firstAttribute="leading" secondItem="OYV-TS-hW4" secondAttribute="leading" constant="-155" id="4mL-yr-jUP"/>
-                            <constraint firstAttribute="trailing" secondItem="64O-dF-MoR" secondAttribute="trailing" constant="-155" id="W5e-rZ-jNZ"/>
-                            <constraint firstAttribute="bottom" secondItem="64O-dF-MoR" secondAttribute="bottom" constant="-151" id="y06-hS-5IE"/>
+                            <constraint firstItem="64O-dF-MoR" firstAttribute="top" secondItem="OYV-TS-hW4" secondAttribute="top" constant="42" id="4IG-U0-uKv"/>
+                            <constraint firstItem="64O-dF-MoR" firstAttribute="leading" secondItem="OYV-TS-hW4" secondAttribute="leading" constant="-232" id="4mL-yr-jUP"/>
+                            <constraint firstAttribute="trailing" secondItem="64O-dF-MoR" secondAttribute="trailing" constant="-232" id="W5e-rZ-jNZ"/>
+                            <constraint firstAttribute="bottom" secondItem="64O-dF-MoR" secondAttribute="bottom" constant="-57" id="y06-hS-5IE"/>
                         </constraints>
                     </view>
                 </subviews>
