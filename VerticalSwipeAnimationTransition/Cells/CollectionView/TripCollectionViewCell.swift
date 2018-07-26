@@ -17,12 +17,17 @@ class TripCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var viewMask: UIView!
 
+    @IBOutlet weak var carImageView: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.carImageView?.image = self.carImageView?.image?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.carImageView?.tintColor = UIColor.white
         viewMask.clipsToBounds = true
-        segmentView.layer.cornerRadius = 20
+        segmentView.layer.cornerRadius = 10
         curvedView.clipsToBounds = true
-        curvedView.layer.cornerRadius = (cardView.frame.width / 2) + 150
+        curvedView.layer.cornerRadius = (cardView.frame.width / 2) + 170
         curvedView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
 }

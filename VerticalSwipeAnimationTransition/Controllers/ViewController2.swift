@@ -54,7 +54,7 @@ class ViewController2: UIViewController {
     
     private func calculateSectionInset() -> CGFloat {
         let cellBodyWidth: CGFloat = 326
-        let inset = ((collectionViewLayout.collectionView!.frame.width - cellBodyWidth) / 4)  + 20.0
+        let inset = ((collectionViewLayout.collectionView!.frame.width - cellBodyWidth) / 4) + 5.0
         return inset
     }
     

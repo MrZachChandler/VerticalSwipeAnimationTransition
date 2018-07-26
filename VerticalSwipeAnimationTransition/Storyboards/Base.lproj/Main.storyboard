@@ -128,7 +128,7 @@
                                 <cells/>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="H5c-xe-s9V">
-                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                                <rect key="frame" x="168" y="630" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
@@ -139,7 +139,7 @@
                             <constraint firstItem="HMh-oV-JE9" firstAttribute="leading" secondItem="ae4-oc-itR" secondAttribute="leading" id="1Wu-g0-R63"/>
                             <constraint firstItem="HMh-oV-JE9" firstAttribute="top" secondItem="ae4-oc-itR" secondAttribute="top" id="7jl-Su-RF3"/>
                             <constraint firstItem="hPJ-W4-gL6" firstAttribute="top" secondItem="ae4-oc-itR" secondAttribute="top" constant="303" id="Dga-3r-LB1"/>
-                            <constraint firstItem="ae4-oc-itR" firstAttribute="bottom" secondItem="H5c-xe-s9V" secondAttribute="bottom" constant="20" id="Fsm-oH-vsw"/>
+                            <constraint firstItem="ae4-oc-itR" firstAttribute="bottom" secondItem="H5c-xe-s9V" secondAttribute="bottom" id="Fsm-oH-vsw"/>
                             <constraint firstItem="HMh-oV-JE9" firstAttribute="trailing" secondItem="ae4-oc-itR" secondAttribute="trailing" id="RNV-FI-s1G"/>
                             <constraint firstItem="hPJ-W4-gL6" firstAttribute="leading" secondItem="tD6-bA-Zdc" secondAttribute="leading" id="WBM-So-ICc"/>
                             <constraint firstItem="HMh-oV-JE9" firstAttribute="bottom" secondItem="ae4-oc-itR" secondAttribute="bottom" id="bV6-VC-p3Z"/>
