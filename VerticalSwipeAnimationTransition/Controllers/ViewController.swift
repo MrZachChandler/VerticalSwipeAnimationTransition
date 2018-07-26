@@ -61,13 +61,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         circleView.layer.cornerRadius = 22
         circleView.layer.masksToBounds = true
-        animatePulse()
-        pulsator.numPulse = 5
-        pulsator.animationDuration = 8
-        pulsator.backgroundColor =  UIColor(red: 0, green: 1, blue: 0.9892283082, alpha: 1).cgColor
-        pulsator.radius = 200
-        circleView.layer.superlayer?.insertSublayer(pulsator, below: circleView.layer)
-        pulsator.start()
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor.black
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
@@ -80,21 +73,11 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-//        runTimer()
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        endTimer()
-    }
-    func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
-    }
-    func endTimer() {
-//        timer.invalidate()
-    }
-    func animatePulse() {
-        
-    }
-    @objc func updateTimer() {
-        animatePulse()
+        pulsator.numPulse = 5
+        pulsator.animationDuration = 8
+        pulsator.backgroundColor =  UIColor(red: 0, green: 1, blue: 0.9892283082, alpha: 1).cgColor
+        pulsator.radius = 200
+        circleView.layer.superlayer?.insertSublayer(pulsator, below: circleView.layer)
+        pulsator.start()
     }
 }
