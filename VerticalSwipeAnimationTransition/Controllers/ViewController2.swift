@@ -19,6 +19,14 @@ class ViewController2: UIViewController {
     var cells: [TripCollectionViewCell] = []
     var selectedIndex = IndexPath(item: 0, section: 0)
     private var indexOfCellBeforeDragging = 0
+    
+    var smallScreen: Bool {
+        get {
+            let screen = self.view.bounds
+            let height = screen.height
+            return height < 600
+        }
+    }
 
     
     override public func viewDidLoad() {
@@ -54,7 +62,11 @@ class ViewController2: UIViewController {
     
     private func calculateSectionInset() -> CGFloat {
         let cellBodyWidth: CGFloat = 326
-        let inset = ((collectionViewLayout.collectionView!.frame.width - cellBodyWidth) / 4) + 5.0
+        var extra:CGFloat = 20
+        if smallScreen {
+            extra = 5
+        }
+        let inset = ((collectionViewLayout.collectionView!.frame.width - cellBodyWidth) / 4) + extra
         return inset
     }
     
@@ -77,7 +89,7 @@ class ViewController2: UIViewController {
                 UIView.animate(withDuration: 0.221) {
                     cell.segmentView.hero.id = "segment"
                     cell.viewMask.hero.id = "roundedTop"
-                    cell.contentView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                    cell.contentView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
                 }
             } else {
                 UIView.animate(withDuration: 0.221) {
@@ -133,11 +145,8 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(cellSwiped))
         swipeUp.direction = UISwipeGestureRecognizerDirection.up
         cell.contentView.addGestureRecognizer(swipeUp)
-        
-        let screen = self.view.bounds.size
-        let height = screen.height
-        
-        if height < 600 {
+        cell.setConstraintHeight(constant: -5)
+        if smallScreen {
             cell.setConstraintHeight(constant: -30)
         }
         return cell
