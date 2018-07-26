@@ -14,6 +14,7 @@ class TripCardTableViewCell: UITableViewCell {
     @IBOutlet private weak var collectionViewLayout: UICollectionViewFlowLayout!
     private var indexOfCellBeforeDragging = 0
 
+    var selectedIndex: IndexPath!
     var dataSource = [1,2,3]
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,6 +44,7 @@ class TripCardTableViewCell: UITableViewCell {
         collectionView.register(UINib(nibName: "StepFieldCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "StepFieldCollectionViewCell")
 
         collectionView.reloadData()
+//        collectionView.scrollToItem(at: selectedIndex, at: .centeredHorizontally, animated: false)
     }
 }
 extension TripCardTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

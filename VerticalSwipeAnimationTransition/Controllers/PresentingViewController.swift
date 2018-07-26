@@ -44,10 +44,10 @@ class PresentingViewController: UIViewController {
         tableView.register(UINib(nibName: "RoundedTopTableViewCell", bundle: nil), forCellReuseIdentifier: "RoundedTopTableViewCell")
         tableView.register(UINib(nibName: "TripCardTableViewCell", bundle: nil), forCellReuseIdentifier: "TripCardTableViewCell")
         self.navigationController?.hero.isEnabled = true
-
+        
     }
     @objc func exitPresentation() {
-            exitControl.endRefreshing()
+        exitControl.attributedTitle = NSAttributedString(string: "")
         self.dismiss(animated: true, completion: nil)
     }
     @objc func backTapped() {
@@ -64,6 +64,7 @@ extension PresentingViewController: UITableViewDataSource, UITableViewDelegate {
         }
         if indexPath.row == 1 {
             let cell =  tableView.dequeueReusableCell(withIdentifier: "TripCardTableViewCell") as! TripCardTableViewCell
+            cell.selectedIndex = selectedIndex
             return cell
         }
         let cell = UITableViewCell()

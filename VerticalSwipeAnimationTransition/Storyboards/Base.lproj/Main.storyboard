@@ -117,7 +117,7 @@
                                 <color key="backgroundColor" red="1" green="0.40997819938736502" blue="0.055863926128495778" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hPJ-W4-gL6">
-                                <rect key="frame" x="0.0" y="439" width="375" height="228"/>
+                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="4EY-Zo-fDe">
                                     <size key="itemSize" width="374" height="314"/>
@@ -138,13 +138,13 @@
                             <constraint firstAttribute="trailing" secondItem="hPJ-W4-gL6" secondAttribute="trailing" id="1JW-HX-0EB"/>
                             <constraint firstItem="HMh-oV-JE9" firstAttribute="leading" secondItem="ae4-oc-itR" secondAttribute="leading" id="1Wu-g0-R63"/>
                             <constraint firstItem="HMh-oV-JE9" firstAttribute="top" secondItem="ae4-oc-itR" secondAttribute="top" id="7jl-Su-RF3"/>
+                            <constraint firstItem="hPJ-W4-gL6" firstAttribute="top" secondItem="ae4-oc-itR" secondAttribute="top" constant="303" id="Dga-3r-LB1"/>
                             <constraint firstItem="ae4-oc-itR" firstAttribute="bottom" secondItem="H5c-xe-s9V" secondAttribute="bottom" constant="20" id="Fsm-oH-vsw"/>
                             <constraint firstItem="HMh-oV-JE9" firstAttribute="trailing" secondItem="ae4-oc-itR" secondAttribute="trailing" id="RNV-FI-s1G"/>
                             <constraint firstItem="hPJ-W4-gL6" firstAttribute="leading" secondItem="tD6-bA-Zdc" secondAttribute="leading" id="WBM-So-ICc"/>
                             <constraint firstItem="HMh-oV-JE9" firstAttribute="bottom" secondItem="ae4-oc-itR" secondAttribute="bottom" id="bV6-VC-p3Z"/>
                             <constraint firstItem="H5c-xe-s9V" firstAttribute="centerX" secondItem="tD6-bA-Zdc" secondAttribute="centerX" id="ezW-1F-tHp"/>
                             <constraint firstItem="hPJ-W4-gL6" firstAttribute="bottom" secondItem="ae4-oc-itR" secondAttribute="bottom" id="j6T-mF-PKI"/>
-                            <constraint firstItem="hPJ-W4-gL6" firstAttribute="top" secondItem="ae4-oc-itR" secondAttribute="top" constant="375" id="pgK-2D-Fu3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ae4-oc-itR"/>
                     </view>

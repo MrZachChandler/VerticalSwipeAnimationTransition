@@ -17,13 +17,16 @@ class ViewController2: UIViewController {
 
     var dataSource = [1,2,3]
     var cells: [TripCollectionViewCell] = []
-    var selectedIndex: IndexPath?
+    var selectedIndex = IndexPath(item: 0, section: 0)
     private var indexOfCellBeforeDragging = 0
 
     
     override public func viewDidLoad() {
         super.viewDidLoad()
 
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(cellSwiped))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        collectionView.addGestureRecognizer(swipeUp)
         collectionView.register(UINib(nibName: "TripCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TripCollectionViewCell")
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -35,15 +38,13 @@ class ViewController2: UIViewController {
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.hero.isEnabled = true
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let indexPath = selectedIndex {
-            collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            animateVisibleCell(forIndex: indexPath.row)
-        } else {
-            animateVisibleCell(forIndex: 0)
-        }
+        collectionViewLayout.collectionView!.scrollToItem(at: selectedIndex, at: .centeredHorizontally, animated: true)
+        animateVisibleCell(forIndex: selectedIndex.row)
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -90,6 +91,29 @@ class ViewController2: UIViewController {
             curIndex += 1
         }
     }
+    @objc func cellSwiped(gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .up {
+            presentPresent()
+        }
+    }
+    func presentPresent(){
+        //prep cells
+        for cell in cells {
+            UIView.animate(withDuration: 0.221) {
+                cell.contentView.transform = CGAffineTransform.identity
+            }
+        }
+        //present new story
+        let storyboard = UIStoryboard(name: "PresentingStoryboard", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "PresentingViewController") as! UINavigationController
+    
+        let root = controller.viewControllers.first as! PresentingViewController
+        root.selectedIndex = selectedIndex
+        controller.viewControllers[0] = root
+        self.present(controller, animated: true, completion: nil)
+
+    }
+    
 }
 extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -98,26 +122,21 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = cells[indexPath.row]
-        UIView.animate(withDuration: 0.221) {
-            cell.contentView.transform = CGAffineTransform.identity
-        }
         selectedIndex = indexPath
-        let storyboard = UIStoryboard(name: "PresentingStoryboard", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "PresentingViewController")
-        self.present(controller, animated: true, completion: nil)
-
+        presentPresent()
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TripCollectionViewCell", for: indexPath) as! TripCollectionViewCell
         if cells.count < dataSource.count {
             cells.append(cell)
         }
-        if let selectedIndex = selectedIndex {
-            if selectedIndex.row == indexPath.row {
-                cell.grayView.hero.id = "grayView"
-                cell.segmentView.hero.id = "segment"
-            }
+        if selectedIndex.row == indexPath.row {
+            cell.grayView.hero.id = "grayView"
+            cell.segmentView.hero.id = "segment"
         }
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(cellSwiped))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        cell.contentView.addGestureRecognizer(swipeUp)
         return cell
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -130,12 +149,12 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
         
         // calculate where scrollView should snap to:
         let indexOfMajorCell = self.indexOfMajorCell()
-        
-        //Perform Animation
         let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
+
+        //Perform Animation
         collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         animateVisibleCell(forIndex: indexPath.row)
         pageControl.currentPage = indexPath.row
-        
+        selectedIndex = indexPath
     }
 }
