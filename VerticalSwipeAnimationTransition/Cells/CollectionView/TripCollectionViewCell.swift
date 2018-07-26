@@ -16,7 +16,8 @@ class TripCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var grayView: UIView!
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var viewMask: UIView!
-
+    @IBOutlet weak var verticalConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var carImageView: UIImageView!
 
     override func awakeFromNib() {
@@ -29,6 +30,9 @@ class TripCollectionViewCell: UICollectionViewCell {
         curvedView.clipsToBounds = true
         curvedView.layer.cornerRadius = (cardView.frame.width / 2) + 170
         curvedView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    func setConstraintHeight(constant: CGFloat) {
+        verticalConstraint.constant = constant
     }
 }
 

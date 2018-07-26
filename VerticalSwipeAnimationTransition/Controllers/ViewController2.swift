@@ -133,6 +133,13 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(cellSwiped))
         swipeUp.direction = UISwipeGestureRecognizerDirection.up
         cell.contentView.addGestureRecognizer(swipeUp)
+        
+        let screen = self.view.bounds.size
+        let height = screen.height
+        
+        if height < 600 {
+            cell.setConstraintHeight(constant: -30)
+        }
         return cell
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

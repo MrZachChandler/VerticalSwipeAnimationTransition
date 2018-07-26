@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ca-3p-Avy">
-                        <rect key="frame" x="24" y="0.0" width="322" height="314"/>
+                        <rect key="frame" x="26" y="5" width="322" height="314"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0n-P8-tUr">
                                 <rect key="frame" x="0.0" y="132" width="338" height="143"/>
@@ -90,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RIDE ON THE WAY" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APc-Vd-mZ9">
-                                <rect key="frame" x="178" y="82" width="126" height="23"/>
+                                <rect key="frame" x="135" y="82" width="169" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                 <color key="textColor" name="colour_secondary"/>
                                 <nil key="highlightedColor"/>
@@ -215,7 +215,7 @@
                             <constraint firstItem="KVC-7H-TiR" firstAttribute="centerY" secondItem="Tvb-14-6WB" secondAttribute="centerY" id="eIW-w6-h6l"/>
                             <constraint firstItem="kQ9-1E-czk" firstAttribute="firstBaseline" secondItem="APc-Vd-mZ9" secondAttribute="firstBaseline" id="fIn-mE-yku"/>
                             <constraint firstItem="kQ9-1E-czk" firstAttribute="baseline" secondItem="APc-Vd-mZ9" secondAttribute="baseline" id="faW-5F-DYm"/>
-                            <constraint firstItem="APc-Vd-mZ9" firstAttribute="leading" secondItem="kQ9-1E-czk" secondAttribute="trailing" constant="8" id="gHh-rZ-0dI"/>
+                            <constraint firstItem="APc-Vd-mZ9" firstAttribute="leading" secondItem="kQ9-1E-czk" secondAttribute="trailing" constant="-35" id="gHh-rZ-0dI"/>
                             <constraint firstItem="Dr5-ts-uGM" firstAttribute="top" secondItem="6yq-bg-Tyg" secondAttribute="bottom" constant="-1" id="gdg-xn-XzP"/>
                             <constraint firstItem="gXC-cq-BQX" firstAttribute="centerY" secondItem="dV8-SM-DRC" secondAttribute="centerY" id="hCt-tj-A58"/>
                             <constraint firstAttribute="bottom" secondItem="DvO-C8-dj3" secondAttribute="bottom" constant="1" id="iSr-Rs-Hqr"/>
@@ -231,9 +231,9 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailingMargin" secondItem="0Ca-3p-Avy" secondAttribute="trailing" constant="12" id="JPq-Qr-IxP"/>
-                <constraint firstItem="0Ca-3p-Avy" firstAttribute="leading" secondItem="lcR-BR-2Nz" secondAttribute="leadingMargin" constant="8" id="m4T-Qw-im0"/>
-                <constraint firstAttribute="bottomMargin" secondItem="0Ca-3p-Avy" secondAttribute="bottom" id="pvy-EH-BQz"/>
+                <constraint firstAttribute="trailingMargin" secondItem="0Ca-3p-Avy" secondAttribute="trailing" constant="10" id="JPq-Qr-IxP"/>
+                <constraint firstItem="0Ca-3p-Avy" firstAttribute="leading" secondItem="lcR-BR-2Nz" secondAttribute="leadingMargin" constant="10" id="m4T-Qw-im0"/>
+                <constraint firstAttribute="bottomMargin" secondItem="0Ca-3p-Avy" secondAttribute="bottom" constant="-5" id="pvy-EH-BQz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="9zI-mI-33P"/>
             <connections>
@@ -242,6 +242,7 @@
                 <outlet property="curvedView" destination="DvO-C8-dj3" id="wjG-C5-Chz"/>
                 <outlet property="grayView" destination="6yq-bg-Tyg" id="cUO-aV-XgN"/>
                 <outlet property="segmentView" destination="XKX-T6-c8c" id="1Tj-PS-dAj"/>
+                <outlet property="verticalConstraint" destination="pvy-EH-BQz" id="GY5-Wo-ZFl"/>
                 <outlet property="viewMask" destination="0Ca-3p-Avy" id="EKF-S4-Cbh"/>
             </connections>
         </collectionViewCell>
