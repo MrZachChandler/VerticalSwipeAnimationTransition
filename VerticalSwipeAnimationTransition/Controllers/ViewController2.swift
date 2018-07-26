@@ -121,7 +121,6 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
         return dataSource.count
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = cells[indexPath.row]
         selectedIndex = indexPath
         presentPresent()
     }
@@ -130,10 +129,7 @@ extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource 
         if cells.count < dataSource.count {
             cells.append(cell)
         }
-        if selectedIndex.row == indexPath.row {
-            cell.grayView.hero.id = "grayView"
-            cell.segmentView.hero.id = "segment"
-        }
+        
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(cellSwiped))
         swipeUp.direction = UISwipeGestureRecognizerDirection.up
         cell.contentView.addGestureRecognizer(swipeUp)
