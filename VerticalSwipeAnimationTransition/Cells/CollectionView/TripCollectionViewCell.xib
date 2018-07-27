@@ -63,6 +63,14 @@
                                     <constraint firstAttribute="height" constant="2" id="YSY-6c-3LF"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMP-7v-0IX">
+                                <rect key="frame" x="0.0" y="304" width="322" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="YoK-CT-R7a"/>
+                                    <constraint firstAttribute="height" constant="2" id="btn-fJ-dgH"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV8-SM-DRC">
                                 <rect key="frame" x="71" y="232" width="233" height="17"/>
                                 <string key="text">Ypress Rd, North York Canada 
@@ -205,7 +213,10 @@
                             <constraint firstItem="DvO-C8-dj3" firstAttribute="leading" secondItem="0Ca-3p-Avy" secondAttribute="leading" constant="-192" id="ULK-BN-baq"/>
                             <constraint firstAttribute="bottom" secondItem="x0n-P8-tUr" secondAttribute="bottom" constant="39" id="V8q-rZ-h24"/>
                             <constraint firstItem="DvO-C8-dj3" firstAttribute="top" secondItem="0Ca-3p-Avy" secondAttribute="top" constant="55" id="VNm-Dh-VeT"/>
+                            <constraint firstItem="pMP-7v-0IX" firstAttribute="leading" secondItem="x0n-P8-tUr" secondAttribute="leading" id="WAE-us-tyV"/>
                             <constraint firstItem="dV8-SM-DRC" firstAttribute="leading" secondItem="gXC-cq-BQX" secondAttribute="trailing" constant="8" symbolic="YES" id="WV4-ca-nCl"/>
+                            <constraint firstItem="pMP-7v-0IX" firstAttribute="bottom" secondItem="0Ca-3p-Avy" secondAttribute="bottomMargin" id="Wju-ph-XoL"/>
+                            <constraint firstItem="pMP-7v-0IX" firstAttribute="trailing" secondItem="6yq-bg-Tyg" secondAttribute="trailing" id="Xio-b8-OVL"/>
                             <constraint firstItem="Dr5-ts-uGM" firstAttribute="leading" secondItem="0Ca-3p-Avy" secondAttribute="leading" constant="18" id="YY3-vc-UrB"/>
                             <constraint firstItem="vgM-cq-2cu" firstAttribute="leading" secondItem="dV8-SM-DRC" secondAttribute="leading" id="ZjG-ck-OJA"/>
                             <constraint firstItem="vgM-cq-2cu" firstAttribute="leading" secondItem="Dr5-ts-uGM" secondAttribute="trailing" constant="8" symbolic="YES" id="aaf-WN-QoM"/>
@@ -237,6 +248,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="9zI-mI-33P"/>
             <connections>
+                <outlet property="bottomLineView" destination="pMP-7v-0IX" id="iSw-yc-ndg"/>
                 <outlet property="carImageView" destination="5rV-eT-HDg" id="4jt-h2-JUI"/>
                 <outlet property="cardView" destination="x0n-P8-tUr" id="oHR-el-1GY"/>
                 <outlet property="curvedView" destination="DvO-C8-dj3" id="wjG-C5-Chz"/>

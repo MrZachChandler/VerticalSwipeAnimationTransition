@@ -36,6 +36,7 @@ class PresentingViewController: UIViewController {
         exitControl.attributedTitle = exitTitle
         exitControl.tintColor = .clear
         exitControl.addTarget(self, action: #selector(exitPresentation), for: UIControlEvents.valueChanged)
+        exitControl.frame = CGRect(origin: exitControl.frame.origin, size: CGSize(width: exitControl.frame.width , height: exitControl.frame.height / 2))
         tableView.addSubview(exitControl)
         tableView.delegate = self
         tableView.dataSource = self
@@ -92,5 +93,10 @@ extension PresentingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            self.dismiss(animated: true)
+        }
     }
 }

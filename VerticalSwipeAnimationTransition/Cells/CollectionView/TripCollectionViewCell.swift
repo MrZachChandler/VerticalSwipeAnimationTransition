@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class TripCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var bottomLineView: UIView!
+
     @IBOutlet weak var cardView:UIView!
     @IBOutlet weak var curvedView: UIView!
     @IBOutlet weak var grayView: UIView!
@@ -61,7 +62,6 @@ class TripCollectionViewCell: UICollectionViewCell {
     func setHeroForSubViews() {
         segmentView.hero.id = "segment"
         viewMask.hero.id = "roundedTop"
-//        grayView.hero.id = "grayView"
         segmentView.hero.id = "segment"
         carImageView.hero.id = "segmentImage"
         segmentLabel.hero.id = "segmentLabel"
@@ -84,7 +84,6 @@ class TripCollectionViewCell: UICollectionViewCell {
         cardView.hero.id = ""
         segmentView.hero.id = ""
         viewMask.hero.id = ""
-//        grayView.hero.id = ""
         segmentView.hero.id = ""
         carImageView.hero.id = ""
         segmentLabel.hero.id = ""
