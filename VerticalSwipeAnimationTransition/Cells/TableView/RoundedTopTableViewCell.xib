@@ -26,14 +26,14 @@
                                 <rect key="frame" x="-232" y="42" width="839" height="95"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNM-kr-PNs">
-                                        <rect key="frame" x="402" y="8" width="35" height="4"/>
+                                        <rect key="frame" x="409" y="8" width="22" height="2"/>
                                         <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="MNM-kr-PNs" firstAttribute="leading" secondItem="64O-dF-MoR" secondAttribute="leading" constant="402" id="Nrv-O9-qgW"/>
-                                    <constraint firstAttribute="bottom" secondItem="MNM-kr-PNs" secondAttribute="bottom" constant="83" id="WJ3-RF-UjS"/>
+                                    <constraint firstItem="MNM-kr-PNs" firstAttribute="leading" secondItem="64O-dF-MoR" secondAttribute="leading" constant="409" id="Nrv-O9-qgW"/>
+                                    <constraint firstAttribute="bottom" secondItem="MNM-kr-PNs" secondAttribute="bottom" constant="85" id="WJ3-RF-UjS"/>
                                     <constraint firstItem="MNM-kr-PNs" firstAttribute="centerX" secondItem="64O-dF-MoR" secondAttribute="centerX" id="ZAR-ft-RCE"/>
                                     <constraint firstAttribute="width" secondItem="64O-dF-MoR" secondAttribute="height" multiplier="685:199" constant="511.9899497487437" id="eqa-BD-3wd"/>
                                     <constraint firstItem="MNM-kr-PNs" firstAttribute="top" secondItem="64O-dF-MoR" secondAttribute="topMargin" id="qAO-H4-e3Y"/>

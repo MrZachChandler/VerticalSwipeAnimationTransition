@@ -87,16 +87,12 @@ class ViewController2: UIViewController {
         for cell in cells {
             if index == curIndex {
                 UIView.animate(withDuration: 0.221) {
-                    cell.segmentView.hero.id = "segment"
-                    cell.viewMask.hero.id = "roundedTop"
+                    cell.setHeroForSubViews()
                     cell.contentView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
                 }
             } else {
                 UIView.animate(withDuration: 0.221) {
-                    cell.grayView.hero.id = ""
-                    cell.segmentView.hero.id = ""
-                    cell.cardView.hero.id = ""
-                    cell.viewMask.hero.id = ""
+                    cell.removeHeroForSubViews()
                     cell.contentView.transform = CGAffineTransform.identity
                 }
             }

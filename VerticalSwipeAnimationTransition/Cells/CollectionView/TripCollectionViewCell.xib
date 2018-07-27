@@ -133,8 +133,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hk-ie-Wbr">
-                                        <rect key="frame" x="236" y="13" width="38" height="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drop Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hk-ie-Wbr">
+                                        <rect key="frame" x="236" y="13" width="42" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -240,8 +240,23 @@
                 <outlet property="carImageView" destination="5rV-eT-HDg" id="4jt-h2-JUI"/>
                 <outlet property="cardView" destination="x0n-P8-tUr" id="oHR-el-1GY"/>
                 <outlet property="curvedView" destination="DvO-C8-dj3" id="wjG-C5-Chz"/>
+                <outlet property="dM" destination="xmg-4W-lZ6" id="Ukn-Zb-hdN"/>
+                <outlet property="dateLabel" destination="kQ9-1E-czk" id="8eK-Ip-hgP"/>
+                <outlet property="destImageView" destination="gXC-cq-BQX" id="do7-O0-Evn"/>
+                <outlet property="destLabel" destination="dV8-SM-DRC" id="uJO-0a-DMY"/>
+                <outlet property="dividerLine" destination="Tvb-14-6WB" id="YG3-rr-F8E"/>
+                <outlet property="dropOffLabel" destination="1hk-ie-Wbr" id="Pwz-ri-X90"/>
+                <outlet property="dropOffTimeLabel" destination="NPB-Yf-rZW" id="pwH-s1-Eqp"/>
                 <outlet property="grayView" destination="6yq-bg-Tyg" id="cUO-aV-XgN"/>
+                <outlet property="originImageView" destination="Dr5-ts-uGM" id="ZSl-LO-4P0"/>
+                <outlet property="originLabel" destination="vgM-cq-2cu" id="Mk0-R4-UyV"/>
+                <outlet property="pM" destination="wvT-F5-QtD" id="R8k-Zo-Eqs"/>
+                <outlet property="pickUpLabel" destination="0ev-ud-eMu" id="vdS-Oe-2f0"/>
+                <outlet property="pickUpTimeLabel" destination="ab2-eV-JmU" id="i8g-lY-hDb"/>
+                <outlet property="segmentLabel" destination="6B1-kM-wjq" id="ik7-qt-gvR"/>
                 <outlet property="segmentView" destination="XKX-T6-c8c" id="1Tj-PS-dAj"/>
+                <outlet property="statusLabel" destination="APc-Vd-mZ9" id="3xc-Dw-g75"/>
+                <outlet property="toFromLine" destination="KVC-7H-TiR" id="Ofa-ky-JHW"/>
                 <outlet property="verticalConstraint" destination="pvy-EH-BQz" id="GY5-Wo-ZFl"/>
                 <outlet property="viewMask" destination="0Ca-3p-Avy" id="EKF-S4-Cbh"/>
             </connections>

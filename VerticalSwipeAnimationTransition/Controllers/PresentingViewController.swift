@@ -14,6 +14,8 @@ class PresentingViewController: UIViewController {
     
     var selectedIndex: IndexPath!
     var exitControl = UIRefreshControl()
+    
+    var cells: [UITableViewCell] = []
     private var observerContext = 0
 
     override func viewDidLoad() {
@@ -69,8 +71,8 @@ extension PresentingViewController: UITableViewDataSource, UITableViewDelegate {
         }
         let cell = UITableViewCell()
         cell.textLabel?.text = "IndexPath.row - \(indexPath.row)"
-//        cell.contentView.hero.id = "baseView"
-//        cell.contentView.hero.modifiers = [.f ade]
+        cell.textLabel?.hero.id = "dots"
+        cells.append(cell)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
