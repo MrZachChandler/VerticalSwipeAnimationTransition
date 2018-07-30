@@ -77,6 +77,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="backgroundImageView" destination="4c3-Et-mSP" id="1Jm-RY-jie"/>
                         <outlet property="tableView" destination="SOh-vs-nBR" id="5nq-uH-v4G"/>
                     </connections>
                 </viewController>

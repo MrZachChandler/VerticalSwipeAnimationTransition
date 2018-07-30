@@ -11,7 +11,7 @@ import UIKit
 
 class PresentingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var backgroundImageView: UIImageView!
     var selectedIndex: IndexPath!
     var exitControl = UIRefreshControl()
     
@@ -23,7 +23,17 @@ class PresentingViewController: UIViewController {
         
         setUp()
     }
-    
+    func prepareBackgroundView(){
+//        let blurEffect = UIBlurEffect.init(style: .regular)
+//        let visualEffect = UIVisualEffectView.init(effect: blurEffect)
+//        let bluredView = UIVisualEffectView.init(effect: blurEffect)
+//        bluredView.contentView.addSubview(visualEffect)
+//        
+//        visualEffect.frame = UIScreen.main.bounds
+//        bluredView.frame = UIScreen.main.bounds
+//        
+//        backgroundImageView.insertSubview(bluredView, at: 0)
+    }
     private func setUp() {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(backTapped))
@@ -35,6 +45,7 @@ class PresentingViewController: UIViewController {
         let exitTitle = NSMutableAttributedString(string: "Pull to exit", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 15.0)])
         exitControl.attributedTitle = exitTitle
         exitControl.tintColor = .clear
+        exitControl.contentScaleFactor = 0.5
         exitControl.addTarget(self, action: #selector(exitPresentation), for: UIControlEvents.valueChanged)
         exitControl.frame = CGRect(origin: exitControl.frame.origin, size: CGSize(width: exitControl.frame.width , height: exitControl.frame.height / 2))
         tableView.addSubview(exitControl)
@@ -47,6 +58,7 @@ class PresentingViewController: UIViewController {
         tableView.register(UINib(nibName: "RoundedTopTableViewCell", bundle: nil), forCellReuseIdentifier: "RoundedTopTableViewCell")
         tableView.register(UINib(nibName: "TripCardTableViewCell", bundle: nil), forCellReuseIdentifier: "TripCardTableViewCell")
         self.navigationController?.hero.isEnabled = true
+        prepareBackgroundView()
         
     }
     @objc func exitPresentation() {
